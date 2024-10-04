@@ -60,7 +60,7 @@ async def callback_handler(query: CallbackQuery):
 
 @dp.message(lambda message: message.text.startswith("sf"))
 async def music_from_spotify(message: Message):
-    query = message.text[len("f "):]
+    query = message.text[len("sf "):]
     try:
         logging.info(f"Запрос к Spotify > {query}")
         tracks = Spotify_API.search_tracks(query)
